@@ -1,17 +1,17 @@
 Summary:	X.org video driver for Adreno graphics
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów Adreno
 Name:		xorg-driver-video-freedreno
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-freedreno-%{version}.tar.bz2
-# Source0-md5:	085642246f217ecd9d03c8699526a653
+# Source0-md5:	278e88f85351f1a755d7900beca56478
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	Mesa-libxatracker-devel >= 10.2
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	libdrm-devel
+BuildRequires:	libdrm-devel >= 2.4.54
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	pkgconfig(libdrm_freedreno)
@@ -23,9 +23,10 @@ BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-proto-xextproto-devel >= 7.0.99.1
 BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.4
-BuildRequires:	xorg-xserver-server-devel
+BuildRequires:	xorg-xserver-server-devel >= 1.16
 %{?requires_xorg_xserver_videodrv}
-Requires:	xorg-xserver-server
+Requires:	libdrm >= 2.4.54
+Requires:	xorg-xserver-server >= 1.16
 ExclusiveArch:	arm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,3 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_libdir}/xorg/modules/drivers/freedreno_drv.so
+%{_datadir}/X11/xorg.conf.d/42-freedreno.conf
