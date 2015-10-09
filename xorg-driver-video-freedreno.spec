@@ -1,12 +1,12 @@
 Summary:	X.org video driver for Adreno graphics
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów Adreno
 Name:		xorg-driver-video-freedreno
-Version:	1.3.0
+Version:	1.4.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-freedreno-%{version}.tar.bz2
-# Source0-md5:	a6bff30ae01a7bb7a3128612d139dacc
+# Source0-md5:	e0f49b1a07ac2d390a1239701b5fcefc
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	Mesa-libxatracker-devel >= 10.2
 BuildRequires:	autoconf >= 2.57
